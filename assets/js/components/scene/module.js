@@ -18,7 +18,6 @@ const mutations = {
 
   ADD_JOB (state, jobID) {
     if (undefined === state.jobsPurchased[jobID]) {
-      // state.jobsPurchased[jobID] = 1
       Vue.set(state.jobsPurchased, jobID, 1)
     } else {
       state.jobsPurchased[jobID] += 1
@@ -27,7 +26,6 @@ const mutations = {
 
   ADD_BUSINESS (state, businessID) {
     if (undefined === state.businessesOwned[businessID]) {
-      // state.businessesOwned[businessID] = 1
       Vue.set(state.businessesOwned, businessID, 1)
     } else {
       state.businessesOwned[businessID] += 1

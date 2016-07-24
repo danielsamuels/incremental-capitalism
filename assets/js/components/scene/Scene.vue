@@ -77,6 +77,10 @@
 
           <div class="lyt-Item" v-for="(id, business) in $store.getters.businesses">
             <div class="lyt-ItemColumns">
+              <div class="lyt-ItemColumn lyt-ItemColumn-image">
+                <img :src="$store.getters.businessImage(id)" alt="">
+              </div>
+
               <div class="lyt-ItemColumn lyt-ItemColumn-description">
                 <h4>{{ business.label }} ({{ $store.getters.businessesOwned[id] | default 0 }})</h4>
                 <p>Cost to start: {{ $store.getters.businessCost(id) | currency }}</p>

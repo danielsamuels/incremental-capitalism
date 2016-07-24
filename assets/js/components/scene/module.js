@@ -93,6 +93,7 @@ const getters = {
     return amount
   },
 
+  // How much will this job cost the next time it's purchased?
   jobCost (state, getters, rootState) {
     return (id) => {
       const numJobsPurchased = state.jobsPurchased[id] || 0
@@ -100,6 +101,7 @@ const getters = {
     }
   },
 
+  // Get the image for this job.
   jobImage (state, getters, rootState) {
     return (id) => {
       const job = getters.jobs[id]
@@ -108,6 +110,7 @@ const getters = {
     }
   },
 
+  // How much money has been spent purchasing jobs of this type?
   jobCompoundCost (state, getters, rootState) {
     return (id) => {
       let total = 0
@@ -121,6 +124,7 @@ const getters = {
     }
   },
 
+  // What is the total amount spent on all jobs?
   jobsPurchasedCost (state, getters, rootState) {
     let total = 0
 
@@ -131,6 +135,7 @@ const getters = {
     return total
   },
 
+  // How much will this business cost the next time it's purchased?
   businessCost (state, getters, rootState) {
     return (id) => {
       const numBusinessesOwned = state.businessesOwned[id] || 0
@@ -138,6 +143,16 @@ const getters = {
     }
   },
 
+  // Get the image for this business.
+  businessImage (state, getters, rootState) {
+    return (id) => {
+      const business = getters.businesses[id]
+      const slug = business.label.toLowerCase().replace(/ /g, '-')
+      return `./static/build/img/businesses/${slug}.png`
+    }
+  },
+
+  // How much money has been spent purchasing businesses of this type?
   businessCompoundCost (state, getters, rootState) {
     return (id) => {
       let total = 0
@@ -151,6 +166,7 @@ const getters = {
     }
   },
 
+  // What is the total amount spent on all jobs?
   businessesOwnedCost (state, getters, rootState) {
     let total = 0
 

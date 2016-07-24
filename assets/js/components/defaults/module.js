@@ -75,11 +75,10 @@ const state = {
     12: {'label': 'Railway provider',             'baseCost': 15000000000,    'moneyPerSecond': 300000,     'scaleFactor': 1.75},
     13: {'label': 'Internet service provider',    'baseCost': 30000000000,    'moneyPerSecond': 600000,     'scaleFactor': 1.8},
     14: {'label': 'Regional bank',                'baseCost': 50000000000,    'moneyPerSecond': 1000000,    'scaleFactor': 1.85},
-    15: {'label': 'National bank',                'baseCost': 100000000000,   'moneyPerSecond': 2000000,    'scaleFactor': 1.9},
-    16: {'label': 'Film studio',                  'baseCost': 120000000000,   'moneyPerSecond': 2000000,    'scaleFactor': 1.95},
-    17: {'label': 'International bank',           'baseCost': 250000000000,   'moneyPerSecond': 5000000,    'scaleFactor': 2},
-    18: {'label': 'Oil drillings',                'baseCost': 1000000000000,  'moneyPerSecond': 20000000,   'scaleFactor': 2.05},
-    19: {'label': 'Multi-national conglomerate',  'baseCost': 10000000000000, 'moneyPerSecond': 200000000,  'scaleFactor': 2.1}
+    16: {'label': 'Film studio',                  'baseCost': 120000000000,   'moneyPerSecond': 2000000,    'scaleFactor': 1.9},
+    17: {'label': 'International bank',           'baseCost': 250000000000,   'moneyPerSecond': 5000000,    'scaleFactor': 1.95},
+    18: {'label': 'Oil driller',                'baseCost': 1000000000000,  'moneyPerSecond': 20000000,   'scaleFactor': 2},
+    19: {'label': 'Multi-national conglomerate',  'baseCost': 10000000000000, 'moneyPerSecond': 200000000,  'scaleFactor': 2.05}
   }
   /* eslint-enable key-spacing,no-multi-spaces */
 }

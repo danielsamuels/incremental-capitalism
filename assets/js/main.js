@@ -51,7 +51,7 @@ Vue.filter('currency', (val) => {
     return 0
   }
 
-  return numeral(val).format('$0.00a')
+  return numeral(val).format('$0,0.00')
 })
 
 Vue.config.debug = true

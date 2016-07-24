@@ -3,6 +3,8 @@
   @include Font(32);
 
   justify-content: center;
+  width: 100%;
+  text-align: center;
 }
 
 .scn-Action {

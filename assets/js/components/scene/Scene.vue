@@ -69,7 +69,7 @@
               <div class="lyt-ItemColumn lyt-ItemColumn-action">
                 <a href="#" class="scn-Action" @click.prevent="getBusiness(id)" :class="{
                   'scn-Action-disabled': $store.getters.money < $store.getters.businessCost(id)
-                }">Start company</a>
+                }">Get Businessed</a>
               </div>
           </div>
         </div>

@@ -74,5 +74,8 @@
 
   margin-top: var(--Grid_Gutter);
 
-  &.lyt-Item-buttonContainer {}
+  &.lyt-Item-buttonContainer {
+    text-align: center;
+  }
+
 }

@@ -79,7 +79,7 @@ const state = {
     16: {'label': 'Film studio',                  'baseCost': 120000000000,   'moneyPerSecond': 2000000,    'scaleFactor': 1.95},
     17: {'label': 'International bank',           'baseCost': 250000000000,   'moneyPerSecond': 5000000,    'scaleFactor': 2},
     18: {'label': 'Oil drillings',                'baseCost': 1000000000000,  'moneyPerSecond': 20000000,   'scaleFactor': 2.05},
-    19: {'label': 'Multi-national conglomerate',  'baseCost': 10000000000000, 'moneyPerSecond': 2000000000, 'scaleFactor': 2.1}
+    19: {'label': 'Multi-national conglomerate',  'baseCost': 10000000000000, 'moneyPerSecond': 200000000,  'scaleFactor': 2.1}
   }
   /* eslint-enable key-spacing,no-multi-spaces */
 }

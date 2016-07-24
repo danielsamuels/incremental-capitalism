@@ -1,0 +1,15 @@
+.scn-PrimaryAction {
+  @include Button-primary();
+  @include Font(32);
+
+  justify-content: center;
+}
+
+.scn-Action {
+  @include Button-secondary();
+
+  &.scn-Action-disabled {
+    pointer-events: none;
+    opacity: 0.2;
+  }
+}

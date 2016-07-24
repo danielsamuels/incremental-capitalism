@@ -15,3 +15,53 @@
     opacity: 0.2;
   }
 }
+
+
+.scn-Progress {
+  background-color: #ddd;
+  border: 0;
+  width: 100%;
+  height: 18px;
+  margin: 24px auto 0;
+  border-radius: 3px;
+}
+
+.scn-Progress::-webkit-progress-bar {
+  background-color: #ddd;
+  border-radius: 3px;
+}
+
+.scn-Progress::-webkit-progress-value {
+  background: #cdeb8e;
+  background: linear-gradient(to bottom,  #cdeb8e 0%,#a5c956 100%);
+  border-radius: 3px;
+}
+
+.scn-Progress::-moz-progress-bar {
+  background: #cdeb8e;
+  background: linear-gradient(to bottom,  #cdeb8e 0%,#a5c956 100%);
+  border-radius: 3px;
+}
+
+.scn-ColumnTitle {
+  @include Font(24);
+}
+
+.scn-DataList {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.scn-DataTitle {
+  @include Font(18);
+
+  display: inline-block;
+  font-weight: 600;
+}
+
+.scn-DataValue {
+  @include Font(18);
+
+  display: inline-block;
+  flex: 1;
+}

@@ -40,6 +40,10 @@
   }
 }
 
+.lyt-Header {
+  margin-bottom: 26px;
+}
+
 
 /* Columns */
 
@@ -78,4 +82,8 @@
     text-align: center;
   }
 
+}
+
+.lyt-Footer {
+  margin-top: 24px;
 }

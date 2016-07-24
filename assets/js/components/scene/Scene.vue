@@ -4,25 +4,38 @@
       <div class="lyt-Columns">
         <div class="lyt-Column">
           <div class="lyt-Items">
-            <div class="lyt-Item">
-              <a class="scn-PrimaryAction" @click.prevent="getMoney" href="#">Get paid</a>
-            </div>
-
             <div class="lyt-Item lyt-Item-buttonContainer">
               <h1>Your current social class: {{ $store.getters.socialClass.label }}</h1>
               <p>{{ $store.getters.socialClass.description }}</p>
+              <progress class="scn-Progress" :value="$store.getters.netWorth" :max="$store.getters.nextSocialClass"></progress>
+              <p>Next social class in {{ $store.getters.nextSocialClass - $store.getters.money | currency }}</p>
+            </div>
+
+            <div class="lyt-Item">
+              <a class="scn-PrimaryAction" @click.prevent="getMoney" href="#">Get paid</a>
             </div>
           </div>
         </div>
+
         <div class="lyt-Column">
           <div class="lyt-Items">
-            <div class="lyt-Item">Money: {{ $store.getters.money | currency }}.</div>
-            <div class="lyt-Item">Money per second: {{ $store.getters.moneyPerSecond | currency }}.</div>
-            <div class="lyt-Item">Money per click: {{ $store.getters.moneyPerClick | currency }}.</div>
             <div class="lyt-Item">
-              <a href="#" class="scn-Action" @click.prevent="reset">Reset game</a>
+              <div class="scn-DataTitle">Money:</div>
+              <div class="scn-DataValue">{{ $store.getters.money | currency }}</div>
             </div>
-        </div>
+            <div class="lyt-Item">
+              <div class="scn-DataTitle">Net worth:</div>
+              <div class="scn-DataValue">{{ $store.getters.netWorth | currency }}</div>
+            </div>
+            <div class="lyt-Item">
+              <div class="scn-DataTitle">Money per second:</div>
+              <div class="scn-DataValue">{{ $store.getters.moneyPerSecond | currency }}</div>
+            </div>
+            <div class="lyt-Item">
+              <div class="scn-DataTitle">Money per click:</div>
+              <div class="scn-DataValue">{{ $store.getters.moneyPerClick | currency }}</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -31,7 +44,7 @@
       <div class="lyt-Column">
         <div class="lyt-Items">
           <div class="lyt-Item">
-            <h1>Jobs</h1>
+            <h1 class="scn-ColumnTitle">Jobs</h1>
           </div>
 
           <div class="lyt-Item" v-for="(id, job) in $store.getters.jobs">
@@ -55,7 +68,7 @@
       <div class="lyt-Column">
         <div class="lyt-Items">
           <div class="lyt-Item">
-            <h1>Businesses</h1>
+            <h1 class="scn-ColumnTitle">Businesses</h1>
           </div>
 
           <div class="lyt-Item" v-for="(id, business) in $store.getters.businesses">
@@ -75,8 +88,12 @@
         </div>
       </div>
     </div>
+  </div>
 
-
+  <div class="lyt-Footer">
+    <div class="lyt-Item">
+      <a href="#" class="scn-Action" @click.prevent="reset">Reset game</a>
+    </div>
   </div>
 </template>
 
@@ -132,12 +149,10 @@
         // Can the user afford to get this job?
         if (store.getters.money < store.getters.jobCost(jobID)) {
           // No.
-          console.log("Can't afford this job.", store.getters.money, store.getters.jobCost(jobID))
           return false
         }
 
         // Yes.
-        console.log('addJob')
         store.dispatch('addJob', jobID)
       },
 
@@ -145,7 +160,6 @@
         // Can the user afford to get this job?
         if (store.getters.money < store.getters.businessCost(businessID)) {
           // No.
-          console.log("Can't afford this business.", store.getters.money, store.getters.businessCost(businessID))
           return false
         }
 

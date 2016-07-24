@@ -100,11 +100,57 @@ const getters = {
     }
   },
 
+  jobCompoundCost (state, getters, rootState) {
+    return (id) => {
+      let total = 0
+      const iterations = state.jobsPurchased[id] - 1
+
+      for (let x = 0; x <= iterations; x++) {
+        total += getters.jobs[id].baseCost * Math.pow(getters.jobs[id].scaleFactor, x)
+      }
+
+      return total
+    }
+  },
+
+  jobsPurchasedCost (state, getters, rootState) {
+    let total = 0
+
+    for (const id of Object.keys(state.jobsPurchased)) {
+      total += getters.jobCompoundCost(id)
+    }
+
+    return total
+  },
+
   businessCost (state, getters, rootState) {
     return (id) => {
       const numBusinessesOwned = state.businessesOwned[id] || 0
       return getters.businesses[id].baseCost * Math.pow(getters.businesses[id].scaleFactor, numBusinessesOwned)
     }
+  },
+
+  businessCompoundCost (state, getters, rootState) {
+    return (id) => {
+      let total = 0
+      const iterations = state.businessesOwned[id]
+
+      for (let x = 0; x <= iterations; x++) {
+        total += getters.businesses[id].baseCost * Math.pow(getters.businesses[id].scaleFactor, x)
+      }
+
+      return total
+    }
+  },
+
+  businessesOwnedCost (state, getters, rootState) {
+    let total = 0
+
+    for (const id of Object.keys(state.businessesOwned)) {
+      total += getters.businessCompoundCost(id)
+    }
+
+    return total
   }
 }
 

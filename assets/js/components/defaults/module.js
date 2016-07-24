@@ -1,12 +1,12 @@
 const state = {
   socialClassLevels: [
-    Math.pow(5000, 0) - 1,
-    Math.pow(5000, 1) - 1,
-    Math.pow(5000, 2) - 1,
-    Math.pow(5000, 3) - 1,
-    Math.pow(5000, 4) - 1,
-    Math.pow(5000, 5) - 1,
-    Math.pow(5000, 6) - 1
+    Math.pow(5000, 0) - 1,    //                   0
+    Math.pow(5000, 1) - 1,    //               4,999
+    Math.pow(5000, 2) - 1,    //          24,999,999
+    Math.pow(5000, 2.5) - 1,  //       1,767,766,952
+    Math.pow(5000, 3) - 1,    //     124,999,999,999
+    Math.pow(5000, 3.5) - 1,  //   8,838,834,764,999
+    Math.pow(5000, 4) - 1     // 624,999,999,999,999
   ],
   socialClasses: [
     {
@@ -90,18 +90,37 @@ const getters = {
   businesses: (state) => state.businesses,
   jobs: (state) => state.jobs,
 
-  socialClass (state) {
+  netWorth (state, getters, rootState) {
+    // We have to look at the amount invested, so the cost of the items purchased.
+    return getters.money + getters.jobsPurchasedCost + getters.businessesOwnedCost
+  },
+
+  socialClassLevel (state, getters, rootState) {
     let level = 0
 
     state.socialClassLevels.forEach((amount, index) => {
-      if (state.money > amount) {
+      if (getters.netWorth > amount) {
         level = index
       } else {
         return true
       }
     })
 
-    return state.socialClasses[level]
+    return level
+  },
+
+  socialClass (state, getters, rootState) {
+    return getters.socialClasses[getters.socialClassLevel]
+  },
+
+  nextSocialClass (state, getters, rootState) {
+    const currentLevel = getters.socialClassLevel
+
+    if (currentLevel + 1 === state.socialClassLevels.length) {
+      return null
+    }
+
+    return state.socialClassLevels[currentLevel + 1]
   }
 }
 

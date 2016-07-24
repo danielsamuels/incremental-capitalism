@@ -100,6 +100,14 @@ const getters = {
     }
   },
 
+  jobImage (state, getters, rootState) {
+    return (id) => {
+      const job = getters.jobs[id]
+      const slug = job.label.toLowerCase().replace(/ /g, '-')
+      return `./static/build/img/jobs/${slug}.png`
+    }
+  },
+
   jobCompoundCost (state, getters, rootState) {
     return (id) => {
       let total = 0

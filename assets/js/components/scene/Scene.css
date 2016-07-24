@@ -10,6 +10,8 @@
 .scn-Action {
   @include Button-secondary();
 
+  align-self: center;
+
   &.scn-Action-disabled {
     pointer-events: none;
     opacity: 0.2;

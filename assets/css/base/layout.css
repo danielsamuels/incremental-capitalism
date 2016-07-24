@@ -67,6 +67,7 @@
   }
 
   &.lyt-ItemColumn-action {
+    display: flex;
   }
 }
 

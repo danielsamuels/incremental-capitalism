@@ -1352,6 +1352,8 @@ bottom margins, respectively. */
 }
 
 .lyt-ItemColumn.lyt-ItemColumn-action {
+	display: -ms-flexbox;
+	display: flex;
 }
 
 /* Items */
@@ -1576,6 +1578,10 @@ bottom margins, respectively. */
               color 0.16s;
   /* stylelint-enable */
   background-color: #000;
+
+  -ms-flex-item-align: center;
+
+      align-self: center;
 }
 
 .scn-Action.scn-Action-disabled {

@@ -49,6 +49,10 @@
 
           <div class="lyt-Item" v-for="(id, job) in $store.getters.jobs">
             <div class="lyt-ItemColumns">
+              <div class="lyt-ItemColumn lyt-ItemColumn-image">
+                <img :src="$store.getters.jobImage(id)" alt="">
+              </div>
+
               <div class="lyt-ItemColumn lyt-ItemColumn-description">
                 <h4>{{ job.label }} ({{ $store.getters.jobsPurchased[id] | default 0 }})</h4>
                 <p>Cost to apply: {{ $store.getters.jobCost(id) | currency }}</p>

@@ -8,7 +8,7 @@
               <h1>Your current social class: {{ $store.getters.socialClass.label }}</h1>
               <p>{{ $store.getters.socialClass.description }}</p>
               <progress class="scn-Progress" :value="$store.getters.netWorth" :max="$store.getters.nextSocialClass"></progress>
-              <p>Next social class in {{ $store.getters.nextSocialClass - $store.getters.money | currency }}</p>
+              <p>Next social class in {{ ($store.getters.nextSocialClass - $store.getters.money) | currency }}</p>
             </div>
 
             <div class="lyt-Item">

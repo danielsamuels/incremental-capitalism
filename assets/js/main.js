@@ -44,11 +44,16 @@ Vue.filter('default', (val, def) => {
 
 Vue.filter('currency', (val) => {
   if (undefined === val) {
-    val = -1
+    val = 0
   }
 
   if (isNaN(val)) {
     return 0
+  }
+
+  // Don't show decimals after 1 million.
+  if (val > 1000000) {
+    return numeral(val).format('$0,0')
   }
 
   return numeral(val).format('$0,0.00')

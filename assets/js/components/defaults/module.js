@@ -42,9 +42,9 @@ const state = {
   /* eslint-disable key-spacing,no-multi-spaces */
   jobs: {
     1:  {'label': 'Hairdresser',            'moneyPerClick': 1,     'baseCost': 20,         'scaleFactor': 1.1},
-    2:  {'label': 'Cleaner',                'moneyPerClick': 10,    'baseCost': 3000,       'scaleFactor': 1.15},
-    3:  {'label': 'Shelf filler',           'moneyPerClick': 15,    'baseCost': 9000,       'scaleFactor': 1.2},
-    4:  {'label': 'Housekeeper',            'moneyPerClick': 25,    'baseCost': 21000,      'scaleFactor': 1.25},
+    2:  {'label': 'Cleaner',                'moneyPerClick': 10,    'baseCost': 2500,       'scaleFactor': 1.15},
+    3:  {'label': 'Shelf filler',           'moneyPerClick': 15,    'baseCost': 7500,       'scaleFactor': 1.2},
+    4:  {'label': 'Housekeeper',            'moneyPerClick': 25,    'baseCost': 18000,      'scaleFactor': 1.25},
     5:  {'label': 'Teaching assistant',     'moneyPerClick': 40,    'baseCost': 50000,      'scaleFactor': 1.3},
     6:  {'label': 'Fishmonger',             'moneyPerClick': 60,    'baseCost': 75000,      'scaleFactor': 1.35},
     7:  {'label': 'Receptionist',           'moneyPerClick': 85,    'baseCost': 125000,     'scaleFactor': 1.4},
@@ -61,9 +61,9 @@ const state = {
     18: {'label': 'Pilot',                  'moneyPerClick': 20000, 'baseCost': 1250000000, 'scaleFactor': 1.95}
   },
   businesses: {
-    1:  {'label': 'Etsy store',                   'baseCost': 50000,          'moneyPerSecond': 100,        'scaleFactor': 1.2},
-    2:  {'label': 'Freelance website design',     'baseCost': 150000,         'moneyPerSecond': 300,        'scaleFactor': 1.25},
-    3:  {'label': 'Coffee shop',                  'baseCost': 1000000,        'moneyPerSecond': 550,        'scaleFactor': 1.3},
+    1:  {'label': 'Etsy store',                   'baseCost': 20000,          'moneyPerSecond': 100,        'scaleFactor': 1.2},
+    2:  {'label': 'Freelance website design',     'baseCost': 100000,         'moneyPerSecond': 300,        'scaleFactor': 1.25},
+    3:  {'label': 'Coffee shop',                  'baseCost': 750000,        'moneyPerSecond': 550,        'scaleFactor': 1.3},
     4:  {'label': 'High-end café',                'baseCost': 5500000,        'moneyPerSecond': 1000,       'scaleFactor': 1.35},
     5:  {'label': 'Burger franchise',             'baseCost': 12500000,       'moneyPerSecond': 2500,       'scaleFactor': 1.4},
     6:  {'label': 'Small design studio',          'baseCost': 50000000,       'moneyPerSecond': 4000,       'scaleFactor': 1.45},

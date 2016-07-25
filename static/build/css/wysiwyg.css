@@ -114,7 +114,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
 
-  font-family: 'Montserrat', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  font-family: Inconsolata, Monaco, Lucida Console, monospace;
   font-weight: 400;
   color: #000;
   /* By default, `<body>` has no `background-color` so we set one as a best practice. */
